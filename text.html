@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<script src="http://www.jqueryba.com/lib/2.1.2/jquery-2.1.2.js"></script> 
+
+<script type="text/javascript">
+    function people(name, sex) {  
+        this.name = name;  
+        this.sex = sex;  
+  
+    } 
+	//利用call方法赋值  
+    function studentByCall(name, sex, age) {  
+  
+        people.call(this, arguments);//arguments即默认为name  
+        // people.call(this, name,sex);//正确写法  
+        this.age = age;  
+    }  
+    var st = new studentByCall("liw", "男", 24);  
+  
+    console.log(st.name + "\t" + st.sex + "\t" + st.age);//[object Arguments]   undefined   24  
+</script>
+<body>
+	  
+</body>
+</html>
